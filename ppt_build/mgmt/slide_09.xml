@@ -1,0 +1,19 @@
+<slide xmlns="https://www.larkoffice.com/sml/2.0"><data><shape type="rect" topLeftX="0" topLeftY="0" width="960" height="70"><fill><fillColor color="rgba(26,54,93,1)"/></fill></shape><shape type="text" topLeftX="40" topLeftY="18" width="800" height="36"><content textType="title" fontSize="24" color="rgba(255,255,255,1)"><p>典型应用场景</p></content></shape><shape type="text" topLeftX="40" topLeftY="80" width="880" height="28"><content textType="body" fontSize="14" color="rgba(113,128,150,1)"><p>一个销售的一天：AI辅助前后对比</p></content></shape><shape type="round-rect" topLeftX="50" topLeftY="120" width="420" height="320" presetHandlers="8"><fill><fillColor color="rgba(255,255,255,1)"/></fill></shape><shape type="rect" topLeftX="50" topLeftY="120" width="4" height="320"><fill><fillColor color="rgba(212,175,55,1)"/></fill></shape><shape type="text" topLeftX="66" topLeftY="132" width="396" height="24"><content textType="body" fontSize="15" color="rgba(26,54,93,1)" bold="true"><p>AI辅助前（传统模式）</p></content></shape><shape type="text" topLeftX="66" topLeftY="160" width="396" height="272"><content textType="body" fontSize="12" color="rgba(45,55,72,1)"><p>9:00 打开CRM，查看新线索（30分钟）
+10:00 手动查公司信息（10分钟/条×10条）
+11:30 写开发信（15分钟/封×10封）
+14:00 发送邮件，记录跟进状态
+15:00 处理客户回复，分类回复
+16:00 手动录入CRM（5分钟/条）
+17:00 整理日报
+
+日处理线索：约15条
+有效沟通时间：约2小时</p></content></shape><shape type="round-rect" topLeftX="490" topLeftY="120" width="420" height="320" presetHandlers="8"><fill><fillColor color="rgba(255,255,255,1)"/></fill></shape><shape type="rect" topLeftX="490" topLeftY="120" width="4" height="320"><fill><fillColor color="rgba(212,175,55,1)"/></fill></shape><shape type="text" topLeftX="506" topLeftY="132" width="396" height="24"><content textType="body" fontSize="15" color="rgba(26,54,93,1)" bold="true"><p>AI辅助后（智能模式）</p></content></shape><shape type="text" topLeftX="506" topLeftY="160" width="396" height="272"><content textType="body" fontSize="12" color="rgba(45,55,72,1)"><p>9:00 查看AI评分后的A级线索（5分钟）
+9:30 AI已自动富集+生成首封邮件，审核发送
+10:00 专注高意向客户深度沟通
+11:00 AI自动处理常规回复，仅需处理复杂问题
+14:00 AI自动跟进，销售专注方案定制
+15:00 查看ROI看板，调整策略
+16:00 CRM自动同步，无需手动录入
+
+日处理线索：约150条（10倍）
+有效沟通时间：约6小时（3倍）</p></content></shape></data></slide>

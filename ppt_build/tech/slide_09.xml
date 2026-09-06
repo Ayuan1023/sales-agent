@@ -1,0 +1,22 @@
+<slide xmlns="https://www.larkoffice.com/sml/2.0"><data><shape type="rect" topLeftX="0" topLeftY="0" width="960" height="70"><fill><fillColor color="rgba(26,54,93,1)"/></fill></shape><shape type="text" topLeftX="40" topLeftY="18" width="800" height="36"><content textType="title" fontSize="24" color="rgba(255,255,255,1)"><p>CRM同步与数据模型</p></content></shape><shape type="text" topLeftX="40" topLeftY="80" width="880" height="28"><content textType="body" fontSize="14" color="rgba(113,128,150,1)"><p>SQLite三表结构，同步日志可追溯</p></content></shape><shape type="round-rect" topLeftX="50" topLeftY="120" width="270" height="200" presetHandlers="8"><fill><fillColor color="rgba(255,255,255,1)"/></fill></shape><shape type="rect" topLeftX="50" topLeftY="120" width="4" height="200"><fill><fillColor color="rgba(212,175,55,1)"/></fill></shape><shape type="text" topLeftX="66" topLeftY="132" width="246" height="24"><content textType="body" fontSize="15" color="rgba(26,54,93,1)" bold="true"><p>leads表</p></content></shape><shape type="text" topLeftX="66" topLeftY="160" width="246" height="152"><content textType="body" fontSize="12" color="rgba(45,55,72,1)"><p>id (PK)
+company_name
+industry / company_size
+funding_stage / tech_stack
+decision_maker
+score / grade
+status
+created_at / updated_at</p></content></shape><shape type="round-rect" topLeftX="345" topLeftY="120" width="270" height="200" presetHandlers="8"><fill><fillColor color="rgba(255,255,255,1)"/></fill></shape><shape type="rect" topLeftX="345" topLeftY="120" width="4" height="200"><fill><fillColor color="rgba(212,175,55,1)"/></fill></shape><shape type="text" topLeftX="361" topLeftY="132" width="246" height="24"><content textType="body" fontSize="15" color="rgba(26,54,93,1)" bold="true"><p>communications表</p></content></shape><shape type="text" topLeftX="361" topLeftY="160" width="246" height="152"><content textType="body" fontSize="12" color="rgba(45,55,72,1)"><p>id (PK)
+lead_id (FK)
+type / subject
+body (截断500字)
+direction (outbound/inbound)
+reply_type
+created_at</p></content></shape><shape type="round-rect" topLeftX="640" topLeftY="120" width="270" height="200" presetHandlers="8"><fill><fillColor color="rgba(255,255,255,1)"/></fill></shape><shape type="rect" topLeftX="640" topLeftY="120" width="4" height="200"><fill><fillColor color="rgba(212,175,55,1)"/></fill></shape><shape type="text" topLeftX="656" topLeftY="132" width="246" height="24"><content textType="body" fontSize="15" color="rgba(26,54,93,1)" bold="true"><p>sync_log表</p></content></shape><shape type="text" topLeftX="656" topLeftY="160" width="246" height="152"><content textType="body" fontSize="12" color="rgba(45,55,72,1)"><p>id (PK,自增)
+entity_type
+entity_id
+action (upsert/create/status)
+timestamp
+details</p></content></shape><shape type="round-rect" topLeftX="50" topLeftY="350" width="860" height="130" presetHandlers="8"><fill><fillColor color="rgba(247,250,252,1)"/></fill></shape><shape type="text" topLeftX="70" topLeftY="365" width="820" height="28"><content textType="body" fontSize="16" color="rgba(26,54,93,1)" bold="true"><p>设计约束</p></content></shape><shape type="text" topLeftX="70" topLeftY="400" width="820" height="60"><content textType="body" fontSize="12" color="rgba(45,55,72,1)"><p>- 禁止使用SQLAlchemy relationship表关联，用单表操作+外键字段
+- 所有写入操作自动记录sync_log，可审计
+- communications.body截断500字，避免数据库膨胀
+- CRMSync类封装所有DB操作，Agent层不直接操作SQL</p></content></shape></data></slide>

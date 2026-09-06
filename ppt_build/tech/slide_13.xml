@@ -1,0 +1,24 @@
+<slide xmlns="https://www.larkoffice.com/sml/2.0"><data><shape type="rect" topLeftX="0" topLeftY="0" width="960" height="70"><fill><fillColor color="rgba(26,54,93,1)"/></fill></shape><shape type="text" topLeftX="40" topLeftY="18" width="800" height="36"><content textType="title" fontSize="24" color="rgba(255,255,255,1)"><p>部署方案</p></content></shape><shape type="text" topLeftX="40" topLeftY="80" width="880" height="28"><content textType="body" fontSize="14" color="rgba(113,128,150,1)"><p>单机/Docker/K8s三种部署方式</p></content></shape><shape type="round-rect" topLeftX="50" topLeftY="120" width="270" height="280" presetHandlers="8"><fill><fillColor color="rgba(255,255,255,1)"/></fill></shape><shape type="rect" topLeftX="50" topLeftY="120" width="4" height="280"><fill><fillColor color="rgba(212,175,55,1)"/></fill></shape><shape type="text" topLeftX="66" topLeftY="132" width="246" height="24"><content textType="body" fontSize="15" color="rgba(26,54,93,1)" bold="true"><p>单机部署</p></content></shape><shape type="text" topLeftX="66" topLeftY="160" width="246" height="232"><content textType="body" fontSize="12" color="rgba(45,55,72,1)"><p>pip install -r requirements.txt
+uvicorn src.api.main:app
+--host 0.0.0.0 --port 8000
+
+适合：Demo验证、小团队试用
+配置：2核4G
+并发：支持50并发用户
+数据：SQLite本地存储</p></content></shape><shape type="round-rect" topLeftX="345" topLeftY="120" width="270" height="280" presetHandlers="8"><fill><fillColor color="rgba(255,255,255,1)"/></fill></shape><shape type="rect" topLeftX="345" topLeftY="120" width="4" height="280"><fill><fillColor color="rgba(212,175,55,1)"/></fill></shape><shape type="text" topLeftX="361" topLeftY="132" width="246" height="24"><content textType="body" fontSize="15" color="rgba(26,54,93,1)" bold="true"><p>Docker部署</p></content></shape><shape type="text" topLeftX="361" topLeftY="160" width="246" height="232"><content textType="body" fontSize="12" color="rgba(45,55,72,1)"><p>docker build -t sales-agent .
+docker run -p 8000:8000
+-v /data:/app/data sales-agent
+
+适合：生产环境单实例
+配置：4核8G
+并发：支持200并发
+数据：Volume持久化SQLite</p></content></shape><shape type="round-rect" topLeftX="640" topLeftY="120" width="270" height="280" presetHandlers="8"><fill><fillColor color="rgba(255,255,255,1)"/></fill></shape><shape type="rect" topLeftX="640" topLeftY="120" width="4" height="280"><fill><fillColor color="rgba(212,175,55,1)"/></fill></shape><shape type="text" topLeftX="656" topLeftY="132" width="246" height="24"><content textType="body" fontSize="15" color="rgba(26,54,93,1)" bold="true"><p>K8s部署</p></content></shape><shape type="text" topLeftX="656" topLeftY="160" width="246" height="232"><content textType="body" fontSize="12" color="rgba(45,55,72,1)"><p>Helm Chart部署
+ConfigMap配置
+PVC持久化
+HPA自动扩缩容
+
+适合：大规模生产
+配置：4核8G×N副本
+并发：支持1000+并发
+数据：PostgreSQL替换SQLite
+监控：Prometheus+Grafana</p></content></shape></data></slide>

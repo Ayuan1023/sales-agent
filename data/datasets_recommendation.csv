@@ -1,0 +1,5 @@
+数据集名称,来源,样本量,适用任务,下载地址
+Enron Email Dataset,CMU,50万封邮件,邮件生成/回复分析,https://www.cs.cmu.edu/~enron/
+CRM Sales Opportunities,Kaggle,8000条,线索评分/转化率预测,https://www.kaggle.com/datasets/akashpmishra/crm-sales-opportunities
+Sales Email Templates,HuggingFace,5000条,销售邮件生成,https://huggingface.co/datasets
+Customer Support on Twitter,Kaggle,300万条,客户回复分类/情绪分析,https://www.kaggle.com/datasets/thoughtvector/customer-support-on-twitter

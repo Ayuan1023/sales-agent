@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>销售Agent ROI Dashboard</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>body{background:#f0f2f5;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;}</style>
+</head>
+<body>
+<nav class="navbar navbar-dark" style="background:#1a365d"><div class="container"><span class="navbar-brand">ROI Dashboard</span><a href="/" class="btn btn-sm btn-outline-light">返回</a></div></nav>
+<div class="container mt-4">
+  <div class="row mb-4">
+    <div class="col-md-3"><div class="card"><div class="card-body"><h3 id="s_leads">-</h3><small class="text-muted">总线索数</small></div></div></div>
+    <div class="col-md-3"><div class="card"><div class="card-body"><h3 id="s_outreach">-</h3><small class="text-muted">总触达数</small></div></div></div>
+    <div class="col-md-3"><div class="card"><div class="card-body"><h3 id="s_reply">-</h3><small class="text-muted">回复率</small></div></div></div>
+    <div class="col-md-3"><div class="card"><div class="card-body"><h3 id="s_roi">-</h3><small class="text-muted">ROI倍数</small></div></div></div>
+  </div>
+  <div class="row">
+    <div class="col-md-6"><div class="card"><div class="card-header bg-primary text-white">转化漏斗</div><div class="card-body" id="funnel"></div></div></div>
+    <div class="col-md-6"><div class="card"><div class="card-header bg-success text-white">成本收益分析</div><div class="card-body" id="cost"></div></div></div>
+  </div>
+  <div class="card mt-4"><div class="card-header bg-info text-white">同步日志</div><div class="card-body p-0" style="max-height:300px;overflow-y:auto"><table class="table table-sm mb-0"><thead><tr><th>时间</th><th>类型</th><th>操作</th><th>详情</th></tr></thead><tbody id="logBody"></tbody></table></div></div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+axios.get('/api/roi').then(r=>{const s=r.data;s_leads.textContent=s.total_leads;s_outreach.textContent=s.total_outreach;s_reply.textContent=s.reply_rate+'%';s_roi.textContent=s.cost_estimation.roi_multiple+'x';
+funnel.innerHTML='<div class="mb-2"><span class="badge bg-secondary" style="width:100px">线索</span> '+s.total_leads+'</div><div class="mb-2"><span class="badge bg-primary" style="width:100px">触达</span> '+s.total_outreach+'</div><div class="mb-2"><span class="badge bg-info" style="width:100px">回复</span> '+s.total_replies+' ('+s.reply_rate+'%)</div><div class="mb-2"><span class="badge bg-warning" style="width:100px">会议</span> '+s.meetings_scheduled+' ('+s.meeting_rate+'%)</div><div class="mb-2"><span class="badge bg-success" style="width:100px">转化</span> '+s.converted+' ('+s.conversion_rate+'%)</div>';
+cost.innerHTML='<p>单条线索成本: ¥'+s.cost_estimation.cost_per_lead+'</p><p>总成本: ¥'+s.cost_estimation.total_cost+'</p><p>平均客单价: ¥'+s.cost_estimation.avg_deal_value+'</p><p>预估收入: ¥'+s.cost_estimation.estimated_revenue+'</p><p class="text-success"><b>ROI: '+s.cost_estimation.roi_multiple+'x</b></p>';});
+axios.get('/api/sync-log').then(r=>{logBody.innerHTML=r.data.logs.map(l=>'<tr><td>'+l.timestamp.substring(11,19)+'</td><td>'+l.entity_type+'</td><td>'+l.action+'</td><td>'+l.details+'</td></tr>').join('');});
+</script>
+</body>
+</html>

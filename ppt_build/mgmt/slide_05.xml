@@ -1,0 +1,16 @@
+<slide xmlns="https://www.larkoffice.com/sml/2.0"><data><shape type="rect" topLeftX="0" topLeftY="0" width="960" height="70"><fill><fillColor color="rgba(26,54,93,1)"/></fill></shape><shape type="text" topLeftX="40" topLeftY="18" width="800" height="36"><content textType="title" fontSize="24" color="rgba(255,255,255,1)"><p>ROI分析</p></content></shape><shape type="text" topLeftX="40" topLeftY="80" width="880" height="28"><content textType="body" fontSize="14" color="rgba(113,128,150,1)"><p>按10人销售团队估算，年净收益¥280万</p></content></shape><shape type="round-rect" topLeftX="50" topLeftY="120" width="420" height="200" presetHandlers="8"><fill><fillColor color="rgba(255,255,255,1)"/></fill></shape><shape type="rect" topLeftX="50" topLeftY="120" width="4" height="200"><fill><fillColor color="rgba(212,175,55,1)"/></fill></shape><shape type="text" topLeftX="66" topLeftY="132" width="396" height="24"><content textType="body" fontSize="15" color="rgba(26,54,93,1)" bold="true"><p>投入成本</p></content></shape><shape type="text" topLeftX="66" topLeftY="160" width="396" height="152"><content textType="body" fontSize="12" color="rgba(45,55,72,1)"><p>- 系统开发部署：¥15万（一次性）
+- AI API调用：¥5万/年
+- 运维维护：¥3万/年
+- 培训推广：¥2万/年
+
+首年总投入：¥25万
+次年起年投入：¥10万</p></content></shape><shape type="round-rect" topLeftX="490" topLeftY="120" width="420" height="200" presetHandlers="8"><fill><fillColor color="rgba(255,255,255,1)"/></fill></shape><shape type="rect" topLeftX="490" topLeftY="120" width="4" height="200"><fill><fillColor color="rgba(212,175,55,1)"/></fill></shape><shape type="text" topLeftX="506" topLeftY="132" width="396" height="24"><content textType="body" fontSize="15" color="rgba(26,54,93,1)" bold="true"><p>预期收益</p></content></shape><shape type="text" topLeftX="506" topLeftY="160" width="396" height="152"><content textType="body" fontSize="12" color="rgba(45,55,72,1)"><p>- 人力成本节约：10人×¥15万×50% = ¥75万/年
+- 转化率提升增收：新增转化×¥5万客单 = ¥150万/年
+- 回复率提升增收：¥50万/年
+- 知识沉淀价值：难以量化
+
+年总收益：约¥275万+</p></content></shape><shape type="round-rect" topLeftX="50" topLeftY="350" width="860" height="130" presetHandlers="8"><fill><fillColor color="rgba(212,175,55,1)"/></fill></shape><shape type="text" topLeftX="70" topLeftY="365" width="820" height="28"><content textType="body" fontSize="20" color="rgba(255,255,255,1)" bold="true"><p>投资回报</p></content></shape><shape type="text" topLeftX="70" topLeftY="400" width="820" height="70"><content textType="body" fontSize="14" color="rgba(255,255,255,1)" bold="true"><p>年净收益：¥275万 - ¥10万 = ¥265万/年
+投资回收期：首年投入¥25万 ÷ 月均净收益¥22万 ≈ 1.1个月
+ROI倍数：首年 11x，次年起 27.5x
+
+结论：投资回收期不到2个月，是高确定性、高回报的数字化投入。</p></content></shape></data></slide>
