@@ -108,12 +108,15 @@ class SalesAgent:
         return {"email": email, "step": step + 1, "angle": next_step["angle"]}
 
     def get_roi_stats(self) -> Dict:
+        """执行get_roi_stats功能，处理业务逻辑并返回结果。"""
         return self.dashboard.get_stats()
 
     def get_leads(self, grade: str = None) -> List[Dict]:
+        """执行get_leads功能，处理业务逻辑并返回结果。"""
         return self.crm.get_leads(grade)
 
     def get_lead_detail(self, lead_id: str) -> Dict:
+        """执行get_lead_detail功能，处理业务逻辑并返回结果。"""
         comms = self.crm.get_communications(lead_id)
         state = self.lead_states.get(lead_id, {})
         return {"lead_id": lead_id, "state": state, "communications": comms}
